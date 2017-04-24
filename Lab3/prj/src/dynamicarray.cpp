@@ -1,6 +1,8 @@
-#include "../inc/dynamicarray.hh"
 #include <iostream>
+#include "dynamicarray.hh"
+
 using namespace std;
+
 
 const int increment_by = 100;
 

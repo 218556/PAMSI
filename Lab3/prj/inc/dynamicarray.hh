@@ -1,7 +1,10 @@
 #ifndef DynamicArray_HH
 #define DynamicArray_HH
 
-class DynamicArray 
+#include "idynamicarray.hh"
+
+
+class DynamicArray: IDynamicArray
 {
 private:
 	int size;					// Size of each space
@@ -12,11 +15,11 @@ private:
 public:
     DynamicArray(int size, int initialquantity = 0);
     ~DynamicArray();
-    int AddNewElement(void* element);
-    int AddNewElement(void* element, int increment);
-    void* GetAnElement(int index);
-    int NumberOfElements();
-	void Print();
+    virtual int AddNewElement(void* element);
+    virtual int AddNewElement(void* element, int increment);
+    virtual void* GetAnElement(int index);
+    virtual int NumberOfElements();
+	virtual void Print();
 };
 
 

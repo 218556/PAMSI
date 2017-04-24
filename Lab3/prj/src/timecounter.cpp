@@ -3,7 +3,7 @@
 #include <sys/time.h>
 #include <ctime>
 #include <cstdlib>
-#include "../inc/timecounter.hh"
+#include "timecounter.hh"
 
 using namespace std;
 
@@ -45,3 +45,5 @@ void TimeCounter::printElapsedTime()
 {
 	cout<<endl<<"czas [s]: "<<getElapsedTime()/1000.0<<endl;
 }
+
+void TimeCounter::writeToFile(string filename){}

@@ -2,16 +2,27 @@
 #define TimeCounter_HH
 
 
-class TimeCounter
+#include "itimecounter.hh"
+
+#include <sys/time.h>
+#include <fstream>
+#include <iostream>
+#include <string>
+
+
+class TimeCounter: ITimeCounter
 {
 	private:
 		long start;
 		long stop;
 	public:
-		void startClock();
-		void stopClock();
-		long getElapsedTime();	
-		void printElapsedTime();
+		TimeCounter();
+		~TimeCounter();
+		virtual void startClock();
+		virtual void stopClock();
+		virtual long getElapsedTime();	
+		virtual void printElapsedTime();
+		virtual void writeToFile(string filename);
 };
 
 #endif

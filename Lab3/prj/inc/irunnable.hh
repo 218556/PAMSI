@@ -4,7 +4,8 @@
 class IRunnable
 {
 protected:
-virtual void run();
+virtual void prepare(int size) = 0;
+virtual void run() = 0;
 };
 
 
