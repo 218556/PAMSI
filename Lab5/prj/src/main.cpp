@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include "../inc/dynamicarray.hh"
 #include "../inc/quicksort.hh"
+#include "../inc/mergesort.hh"
 using namespace std;
 
 

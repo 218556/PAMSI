@@ -13,6 +13,7 @@ class TimeCounter: ITimeCounter
 		virtual void stopClock();
 		virtual long getElapsedTime();	
 		virtual void printElapsedTime();
+		virtual void writeToFile();
 };
 
 #endif
