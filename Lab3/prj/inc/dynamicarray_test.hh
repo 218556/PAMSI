@@ -4,15 +4,15 @@
 #include "irunnable.hh"
 #include "dynamicarray.hh"
 
+
 class DynamicArray_Test: IRunnable
 {
 private:
 	DynamicArray dyn_arr;
 public:
-	virtual void prepare(int size);
-	virtual void run();
+	virtual void run(int size, int increment = increment_by);
+	int NumberOfElements();
 };
-
 
 
 #endif

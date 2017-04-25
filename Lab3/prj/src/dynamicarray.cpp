@@ -4,7 +4,14 @@
 using namespace std;
 
 
-const int increment_by = 100;
+DynamicArray::DynamicArray()
+{
+	size = sizeof(int);
+	quantity = 0;
+	next = 0;
+	storage = 0;
+	EnlargeAnArray(0);
+}
 
 DynamicArray::DynamicArray(int sz, int initialquantity)
 {
@@ -15,20 +22,12 @@ DynamicArray::DynamicArray(int sz, int initialquantity)
 	EnlargeAnArray(initialquantity);
 }
 
-int DynamicArray::AddNewElement(void* element)
+DynamicArray::~DynamicArray()
 {
-	if(next >= quantity)
+	if(storage != 0)
 	{
-		EnlargeAnArray(increment_by);
+		delete []storage;
 	}
-	int startbytes = next * size;
-	unsigned char* newelement = (unsigned char*)element;
-	for(int i = 0; i < size; i++)
-	{
-		storage[startbytes + i] = newelement[i];
-	}
-	next++;
-	return(next - 1);
 }
 
 int DynamicArray::AddNewElement(void* element, int increment)
@@ -66,6 +65,10 @@ int DynamicArray::NumberOfElements()
 
 void DynamicArray::EnlargeAnArray(int increase)
 {
+	if(increase == 0)
+	{
+		increase = 1;
+	}
 	int newquantity = quantity + increase;
 	int newbytes = newquantity * size;
 	int oldbytes = quantity * size;
@@ -87,10 +90,3 @@ void DynamicArray::Print()
     }
 }
 
-DynamicArray::~DynamicArray()
-{
-	if(storage != 0)
-	{
-		delete []storage;
-	}
-}

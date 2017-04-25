@@ -46,4 +46,11 @@ void TimeCounter::printElapsedTime()
 	cout<<endl<<"czas [s]: "<<getElapsedTime()/1000.0<<endl;
 }
 
-void TimeCounter::writeToFile(string filename){}
+void TimeCounter::writeToFile(string filename)
+{
+	ofstream file;
+	filename += ".csv";
+	file.open(filename.c_str(), ios::app);
+	file << getElapsedTime()/1000.0 << ",";
+	file.close();
+}

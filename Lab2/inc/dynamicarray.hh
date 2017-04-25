@@ -1,6 +1,9 @@
 #ifndef DynamicArray_HH
 #define DynamicArray_HH
 
+const int increment_by = 100;
+
+
 class DynamicArray 
 {
 private:
@@ -13,8 +16,7 @@ private:
 public:
     DynamicArray(int size, int initialquantity = 0);
     ~DynamicArray();
-    int AddNewElement(void* element);
-    int AddNewElement(void* element, int increment);
+    int AddNewElement(void* element, int increment = increment_by);
     void* GetAnElement(int index);
     int NumberOfElements();
 	void Print();

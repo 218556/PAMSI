@@ -1,8 +1,10 @@
 #include <iostream>
+#include <sstream>
 #include <cstring>
 #include <time.h>
 #include <sys/time.h>
 #include <ctime>
+#include <assert.h>
 #include "dynamicarray.hh"
 #include "timecounter.hh"
 #include "dynamicarray_test.hh"
@@ -11,47 +13,28 @@ using namespace std;
 
 int main()
 {
-	/*
 	TimeCounter stoper;
-	DynamicArray tablicaint(sizeof(int));
-	int n = 100000;
-	long pomiary[10];
+	DynamicArray_Test tablicaint;
+	int number_of_elements = 1000;
+	int number_of_iterations = 10;
 	ofstream file;
+	stringstream s;
+    s << number_of_elements ;
 	
-	for (int j = 0; j < 10; j++)
-	{
-		stoper.startClock();
-		
-	// zwiekszanie tablicy o 1
-		for(int i = 0; i < n; i++)
-		{
-			tablicaint.AddNewElement(&i, increment);
-		}
-*/
-	// dwukrotne zwiekszanie tablicy
-		/*
-		for(int i = 0; i < 10; i++)
-		{
-			tablicaint.AddNewElement(&i, tablicaint.NumberOfElements());
-		}
-		*/
-		/*
-		stoper.stopClock();
-		tablicaint.Print();
-		stoper.printElapsedTime();
-		pomiary[j]=stoper.getElapsedTime();
-	}
 	
-	file.open("pomiary.csv");
-	long srednia=0;
-	for(int j=0; j<10; j++)
+	int increment[] = {10, 100, tablicaint.NumberOfElements()};
+	for(int j = 0; j < 3; j++)
 	{
-		file << pomiary[j]/1000.0 << endl;
-		srednia += pomiary[j];
+		for (int j = 0; j < number_of_iterations; j++)
+		{
+			stoper.startClock();
+			tablicaint.run(number_of_elements, increment[j]);  // dwukrotne zwiekszanie tablicy
+			stoper.stopClock();
+			stoper.printElapsedTime();
+			stoper.writeToFile(s.str());
+		}
 	}
-	file << srednia/1000.0/10<<endl;
-	file.close();
-	*/
 	
   return 0;
+  
 }

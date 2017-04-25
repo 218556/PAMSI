@@ -16,8 +16,6 @@ class TimeCounter: ITimeCounter
 		long start;
 		long stop;
 	public:
-		TimeCounter();
-		~TimeCounter();
 		virtual void startClock();
 		virtual void stopClock();
 		virtual long getElapsedTime();	

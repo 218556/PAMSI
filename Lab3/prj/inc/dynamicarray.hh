@@ -3,6 +3,7 @@
 
 #include "idynamicarray.hh"
 
+const int increment_by = 100;
 
 class DynamicArray: IDynamicArray
 {
@@ -13,10 +14,10 @@ private:
     unsigned char* storage;		// Dynamically allocated array of bytes
     void EnlargeAnArray(int increase);
 public:
+	DynamicArray();
     DynamicArray(int size, int initialquantity = 0);
     ~DynamicArray();
-    virtual int AddNewElement(void* element);
-    virtual int AddNewElement(void* element, int increment);
+    virtual int AddNewElement(void* element, int increment = increment_by);
     virtual void* GetAnElement(int index);
     virtual int NumberOfElements();
 	virtual void Print();
