@@ -2,14 +2,12 @@
 #define Queue_HH
 
 #include "iqueue.hh"
-#include "irunnable.hh"
 
 
-class Queue : IQueue, IRunnable
+class Queue : IQueue
 {
-protected:
-	virtual void prepare();
-	virtual void run();
+private:
+	//Node sth sth
 public:
 	Queue();
 	~Queue();

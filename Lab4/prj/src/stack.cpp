@@ -1,13 +1,5 @@
-#include "../inc/stack.hh"
+#include "stack.hh"
 using namespace std;
-
-
-void Stack::prepare(){
-}
-
-void Stack::run(){
-}
-
 
 Stack::Stack(){
 }

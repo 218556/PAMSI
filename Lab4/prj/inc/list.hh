@@ -2,13 +2,11 @@
 #define List_HH
 
 #include "ilist.hh"
-#include "irunnable.hh"
 
-class List: IList, IRunnable
+class List: IList
 {
-protected:
-	virtual void prepare();
-	virtual void run();
+private:
+	//Node sth sth
 public:
 	List();
 	~List();

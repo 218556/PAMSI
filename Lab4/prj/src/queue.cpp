@@ -1,12 +1,6 @@
-#include "../inc/queue.hh"
+#include "queue.hh"
+
 using namespace std;
-
-
-void Queue::prepare(){
-}
-
-void Queue::run(){
-}
 
 
 Queue::Queue(){

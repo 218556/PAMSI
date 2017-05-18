@@ -22,6 +22,7 @@ public:
 	virtual int Find(int *element) = 0;
 	virtual void* Get(int element) = 0;
 	virtual int Size() = 0;
+	
 	virtual void Next() = 0;
 	virtual void Prev() = 0;
 };

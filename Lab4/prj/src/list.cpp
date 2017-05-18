@@ -1,13 +1,6 @@
-#include "../inc/list.hh"
+#include "list.hh"
 
 using namespace std;
-
-
-void List::prepare(){
-}
-
-void List::run(){
-}
 
 
 List::List(){

@@ -2,14 +2,12 @@
 #define Stack_HH
 
 #include "istack.hh"
-#include "irunnable.hh"
 
 
-class Stack: IStack, IRunnable
+class Stack: IStack
 {
-protected:
-	virtual void prepare();
-	virtual void run();
+private:
+	//Node sth sth
 public:
 	Stack();
 	~Stack();

@@ -4,8 +4,7 @@
 class IRunnable
 {
 protected:
-virtual void prepare() = 0;
-virtual void run() = 0;
+virtual void run(int number_of_elements) = 0;
 };
 
 
